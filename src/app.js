@@ -6,6 +6,8 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 const public_path = path.join(__dirname, '../public')
 const view_path = path.join(__dirname, '../templates/views')
 const partial_path = path.join(__dirname, '../templates/partial')
@@ -68,6 +70,6 @@ app.get('*', (req, res) => {
     res.render('404') 
 })
 
-app.listen(3000, () => {
-    console.log('Server started on 3000 port.')
+app.listen(port, () => {
+    console.log('Server started on '+port+' port.')
 })
